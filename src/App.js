@@ -1,4 +1,5 @@
 import React from 'react';
+import Card from './card';
 import logo from './logo.svg';
 import './App.css';
 
@@ -10,6 +11,10 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
+        <React.StrictMode>
+          <Card front="This is an example flashcard" />
+        </React.StrictMode>
+        
         <a
           className="App-link"
           href="https://reactjs.org"
