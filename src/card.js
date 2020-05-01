@@ -1,13 +1,14 @@
 import React from 'react';
-
-const card = (props) => {
-    return (
-    <div class="card">
-        <p>
-            {props.front}
-        </p>
-    </div>
-    )
+class Card extends React.Component{
+    render() {
+        return (
+        <div class="card">
+            <p>
+                {this.props.front}
+                {/* This is my sample text. */}
+            </p>
+        </div>
+        )
+    }
 }
-
-export default card;
+export default Card;
