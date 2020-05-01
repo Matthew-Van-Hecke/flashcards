@@ -12,7 +12,7 @@ function App() {
           Edit <code>src/App.js</code> and save to reload.
         </p>
         <React.StrictMode>
-          <Card front="This is an example flashcard" />
+          <Card front="This is an example flashcard" back="This is the back of the card" display="" />
         </React.StrictMode>
         
         <a
