@@ -19,7 +19,7 @@ class Card extends React.Component{
             this.setState({display: this.props.back});
         }
         else{
-            this.setState({display: this.props.back});
+            this.setState({display: this.props.front});
         }
         console.log("Div Clicked")
     }
