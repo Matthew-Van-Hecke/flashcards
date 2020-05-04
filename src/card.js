@@ -2,21 +2,29 @@ import React from 'react';
 class Card extends React.Component{
     constructor(props){
         super(props);
-        this.state = {front: 'TEXT TO DISPLAY'};
-        // this.handleClick = cardFlip;
+        this.state = {display: props.front, front: props.front, back: props.back};
+        this.flipCard = this.flipCard.bind(this);
     }
     render() {
         return (
-        <div class="card">
+        <div className="card" onClick={this.flipCard}>
             <p>
-                {this.state.front}
-                {/* This is my sample text. */}
+                {this.state.display}
             </p>
         </div>
-        )
+        );
     }
-    // cardFlip() {
-    //     if (this.)
-    // }
+    flipCard() {
+        if (this.state.display === this.props.front){
+            this.setState({display: this.props.back});
+        }
+        else{
+            this.setState({display: this.props.back});
+        }
+        console.log("Div Clicked")
+    }
+    componentDidUpdate(){
+        this.render();
+    }
 }
 export default Card;
