@@ -16,10 +16,10 @@ class Stack extends React.Component{
             <div>
                 <h1>{this.state.collection[this.state.stackNumber].title}</h1>
                 <Card front={currentCard.word} back={currentCard.definition} display="" />
-                <button onClick={this.previousCard}>Previous Card</button>
-                <button onClick={this.nextCard}>Next Card</button>
-                <button onClick={this.previousSet}>Previous Set</button>
-                <button onClick={this.nextSet}>Next Set</button>
+                <button onClick={this.previousSet}>{'|<<'}</button>
+                <button onClick={this.previousCard}>{'|<'}</button>
+                <button onClick={this.nextCard}>{'>|'}</button>
+                <button onClick={this.nextSet}>{'>>|'}</button>
             </div>
         );
     }
