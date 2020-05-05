@@ -4,8 +4,6 @@ class Card extends React.Component{
         super(props);
         this.state = {display: props.front, front: props.front, back: props.back};
         this.flipCard = this.flipCard.bind(this);
-        this.previous = this.previous.bind(this);
-        this.next = this.next.bind(this);
     }
     render() {
         return (
@@ -15,8 +13,6 @@ class Card extends React.Component{
                         {this.state.display}
                     </p>
                 </div>
-                <button onClick={this.previous}>Previous</button>
-                <button onClick={this.next}>Next</button>
             </div>
         );
     }
@@ -28,12 +24,6 @@ class Card extends React.Component{
             this.setState({display: this.props.front});
         }
         console.log("Div Clicked")
-    }
-    previous(){
-        console.log(this.state.display);
-    }
-    next(){
-        console.log(this.state.display);
     }
     componentDidUpdate(){
         this.render();
