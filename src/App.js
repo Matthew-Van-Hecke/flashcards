@@ -1,6 +1,5 @@
 import React from 'react';
-import Card from './card';
-import Navigation from './navigation';
+import Stack from './stack';
 import logo from './logo.svg';
 import './App.css';
 
@@ -13,7 +12,7 @@ function App() {
           Edit <code>src/App.js</code> and save to reload.
         </p>
         <React.StrictMode>
-          <Card front="This is an example flashcard" back="This is the back of the card" display="" />
+          <Stack />
         </React.StrictMode>
         <a
           className="App-link"
