@@ -11,7 +11,7 @@ class Stack extends React.Component{
     }
     render(){
         let currentCard = this.state.collection[this.state.stackNumber].cards[this.state.cardNumber];
-        console.log(currentCard);
+        // console.log(currentCard);
         return(
             <div>
                 <h1>{this.state.collection[this.state.stackNumber].title}</h1>
@@ -27,13 +27,19 @@ class Stack extends React.Component{
         console.log("Previous Card");
     }
     nextCard(){
-        console.log("Next Card");
+        this.setState({cardNumber: this.state.cardNumber + 1});
+        console.log(this.state.collection[this.state.stackNumber].cards[this.state.cardNumber]);
     }
     previousSet(){
         console.log("Previous Set");
     }
     nextSet(){
+        this.setState({stackNumber: this.state.stackNumber + 1});
         console.log("Next Set");
+    }
+    componentDidUpdate(){
+        this.
+        console.log(this.Card);
     }
 }
 export default Stack;

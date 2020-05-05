@@ -25,6 +25,9 @@ class Card extends React.Component{
         }
         console.log("Div Clicked")
     }
+    componentWillUpdate(){
+        this.render();
+    }
     componentDidUpdate(){
         this.render();
     }
