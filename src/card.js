@@ -26,10 +26,6 @@ class Card extends React.Component{
         }
         console.log("Div Clicked")
     }
-    // componentDidMount(){
-    //     this.updateStateBasedOnProps();
-    //     this.render();
-    // }
     componentWillReceiveProps(){
         console.log("props updated");
         window.setTimeout(this.updateStateBasedOnProps, 10);

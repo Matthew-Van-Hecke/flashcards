@@ -25,9 +25,8 @@ class Stack extends React.Component{
         );
     }
     previousCard(){
-        //this.setState({cardNumber: this.state.cardNumber - 1});
+        this.setState({cardNumber: this.state.cardNumber - 1});
         console.log("Previous Card");
-        console.log(this.state.cardNumber);
     }
     nextCard(){
         this.setState({cardNumber: this.state.cardNumber + 1});
@@ -35,11 +34,11 @@ class Stack extends React.Component{
         console.log(this.state.cardNumber);
     }
     previousSet(){
-        this.setState({stackNumber: this.state.stackNumber - 1});
+        this.setState({stackNumber: this.state.stackNumber - 1, cardNumber: 0});
         console.log("Previous Set");
     }
     nextSet(){
-        this.setState({stackNumber: this.state.stackNumber + 1});
+        this.setState({stackNumber: this.state.stackNumber + 1, cardNumber: 0});
         console.log("Next Set");
     }
     componentDidUpdate(){
