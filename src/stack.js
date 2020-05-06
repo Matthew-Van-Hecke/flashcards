@@ -54,30 +54,14 @@ class Stack extends React.Component{
         let nextCardButton = document.getElementById("next-card");
         let previousStackButton = document.getElementById("previous-set");
         let nextStackButton = document.getElementById("next-set");
-        if (this.state.cardNumber === 0){
-            previousCardButton.disabled = true;
-        }
-        else{
-            previousCardButton.disabled = false;
-        }
-        if (this.state.cardNumber === this.state.collection[this.state.stackNumber].cards.length - 1){
-            nextCardButton.disabled = true;
-        }
-        else{
-            nextCardButton.disabled = false;
-        }
-        if (this.state.stackNumber === 0){
-            previousStackButton.disabled = true;
-        }
-        else{
-            previousStackButton.disabled = false;
-        }
-        if (this.state.stackNumber === this.state.collection.length - 1){
-            nextStackButton.disabled = true;
-        }
-        else{
-            nextStackButton.disabled = false;
-        }
+
+        this.disableIndividualButton(previousCardButton, this.state.cardNumber === 0);
+        this.disableIndividualButton(nextCardButton, this.state.cardNumber === this.state.collection[this.state.stackNumber].cards.length - 1);
+        this.disableIndividualButton(previousStackButton, this.state.stackNumber === 0);
+        this.disableIndividualButton(nextStackButton, this.state.stackNumber === this.state.collection.length - 1);
+    }
+    disableIndividualButton(button, condition){
+        button.disabled = condition;
     }
 }
 export default Stack;
