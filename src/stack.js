@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from './card';
+var card;
 class Stack extends React.Component{
     constructor(props){
         super(props);
@@ -24,12 +25,14 @@ class Stack extends React.Component{
         );
     }
     previousCard(){
-        this.setState({cardNumber: this.state.cardNumber + 1});
+        //this.setState({cardNumber: this.state.cardNumber - 1});
         console.log("Previous Card");
+        console.log(this.state.cardNumber);
     }
     nextCard(){
         this.setState({cardNumber: this.state.cardNumber + 1});
         console.log(this.state.collection[this.state.stackNumber].cards[this.state.cardNumber]);
+        console.log(this.state.cardNumber);
     }
     previousSet(){
         this.setState({stackNumber: this.state.stackNumber - 1});

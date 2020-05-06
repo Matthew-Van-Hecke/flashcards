@@ -31,9 +31,10 @@ class Card extends React.Component{
     //     this.render();
     // }
     componentWillReceiveProps(){
-        this.updateStateBasedOnProps();
+        console.log("props updated");
+        window.setTimeout(this.updateStateBasedOnProps, 10);
     }
-    componentDidUpdate(){
+    componentWillUpdate(){
         this.render();
     }
     updateStateBasedOnProps(){
