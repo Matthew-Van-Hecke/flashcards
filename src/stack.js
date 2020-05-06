@@ -52,8 +52,8 @@ class Stack extends React.Component{
     disableButtons(){
         let previousCardButton = document.getElementById("previous-card");
         let nextCardButton = document.getElementById("next-card");
-        let previousSetButton = document.getElementById("previous-set");
-        let nextSetButton = document.getElementById("next-set");
+        let previousStackButton = document.getElementById("previous-set");
+        let nextStackButton = document.getElementById("next-set");
         if (this.state.cardNumber === 0){
             previousCardButton.disabled = true;
         }
@@ -65,6 +65,18 @@ class Stack extends React.Component{
         }
         else{
             nextCardButton.disabled = false;
+        }
+        if (this.state.stackNumber === 0){
+            previousStackButton.disabled = true;
+        }
+        else{
+            previousStackButton.disabled = false;
+        }
+        if (this.state.stackNumber === this.state.collection.length - 1){
+            nextStackButton.disabled = true;
+        }
+        else{
+            nextStackButton.disabled = false;
         }
     }
 }
