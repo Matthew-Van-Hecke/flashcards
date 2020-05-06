@@ -4,6 +4,7 @@ class Card extends React.Component{
         super(props);
         this.state = {display: props.front, front: props.front, back: props.back};
         this.flipCard = this.flipCard.bind(this);
+        this.updateStateBasedOnProps = this.updateStateBasedOnProps.bind(this);
     }
     render() {
         return (
@@ -25,11 +26,18 @@ class Card extends React.Component{
         }
         console.log("Div Clicked")
     }
-    componentWillUpdate(){
-        this.render();
+    // componentDidMount(){
+    //     this.updateStateBasedOnProps();
+    //     this.render();
+    // }
+    componentWillReceiveProps(){
+        this.updateStateBasedOnProps();
     }
     componentDidUpdate(){
         this.render();
+    }
+    updateStateBasedOnProps(){
+        this.setState({display: this.props.front, front: this.props.front, back: this.props.back});
     }
 }
 export default Card;
