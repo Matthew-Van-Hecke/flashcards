@@ -1,6 +1,5 @@
 import React from 'react';
 import Card from './card';
-var card;
 class Stack extends React.Component{
     constructor(props){
         super(props);
@@ -9,6 +8,7 @@ class Stack extends React.Component{
         this.nextCard = this.nextCard.bind(this);
         this.previousSet = this.previousSet.bind(this);
         this.nextSet = this.nextSet.bind(this);
+        this.disableButtons = this.disableButtons.bind(this);
     }
     render(){
         let currentCard = this.state.collection[this.state.stackNumber].cards[this.state.cardNumber];
@@ -17,10 +17,10 @@ class Stack extends React.Component{
             <div>
                 <h1>{this.state.collection[this.state.stackNumber].title}</h1>
                 <Card front={currentCard.word} back={currentCard.definition} display="" />
-                <button onClick={this.previousSet}>{'|<<'}</button>
-                <button onClick={this.previousCard}>{'|<'}</button>
-                <button onClick={this.nextCard}>{'>|'}</button>
-                <button onClick={this.nextSet}>{'>>|'}</button>
+                <button id="previous-set" onClick={this.previousSet}>Previous Set</button>
+                <button id="previous-card" onClick={this.previousCard}>Previous Card</button>
+                <button id="next-card" onClick={this.nextCard}>Next Card</button>
+                <button id="next-set" onClick={this.nextSet}>Next Set</button>
             </div>
         );
     }
@@ -41,9 +41,31 @@ class Stack extends React.Component{
         this.setState({stackNumber: this.state.stackNumber + 1, cardNumber: 0});
         console.log("Next Set");
     }
+    componentDidMount(){
+        this.disableButtons();
+    }
     componentDidUpdate(){
         this.render();
+        this.disableButtons();
         console.log(this.Card);
+    }
+    disableButtons(){
+        let previousCardButton = document.getElementById("previous-card");
+        let nextCardButton = document.getElementById("next-card");
+        let previousSetButton = document.getElementById("previous-set");
+        let nextSetButton = document.getElementById("next-set");
+        if (this.state.cardNumber === 0){
+            previousCardButton.disabled = true;
+        }
+        else{
+            previousCardButton.disabled = false;
+        }
+        if (this.state.cardNumber === this.state.collection[this.state.stackNumber].cards.length - 1){
+            nextCardButton.disabled = true;
+        }
+        else{
+            nextCardButton.disabled = false;
+        }
     }
 }
 export default Stack;
