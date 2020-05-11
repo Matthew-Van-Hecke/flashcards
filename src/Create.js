@@ -17,7 +17,14 @@ class CreateCard extends React.Component{
         )
     }
     showForm(){
-        document.getElementById("create").style.display = 'block';
+        let style = document.getElementById("create").style;
+        if (style.display !== 'block'){
+            style.display = 'block';
+        }
+        else{
+            style.display = 'none';
+        }
+        console.log(style.display);
     }
 }
 

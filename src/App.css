@@ -62,3 +62,7 @@
 #create {
   display: none;
 }
+
+input {
+  display: block;
+}
